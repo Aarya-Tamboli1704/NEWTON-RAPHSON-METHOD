@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Newton-Raphson Method</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.9.1/math.min.js"></script>
+</head>
+
+<body>
+  <div class="math-bg">
+    <span>∑</span>
+    <span>π</span>
+    <span>√</span>
+    <span>∫</span>
+    <span>f(x)</span>
+    <span>x²</span>
+    <span>Δ</span>
+    <span>λ</span>
+  </div>
+
+  <div class="container">
+    <h1 class="main-title">Newton-Raphson Method</h1>
+
+    <!-- Definition -->
+    <section class="card">
+      <h2>Definition</h2>
+      <p>
+        The Newton–Raphson method is an iterative numerical technique used to find
+        approximate roots of a real-valued equation f(x) = 0.
+        It starts with an initial guess and improves the accuracy of the solution
+        by repeatedly applying a mathematical formula.
+      </p>
+    </section>
+
+    <!-- Formula -->
+    <section class="card">
+      <h2>Formula</h2>
+      <div class="formula">
+        x<sub>n+1</sub> = x<sub>n</sub> −
+        <span class="fraction">
+          <span class="top">f(x<sub>n</sub>)</span>
+          <span class="bottom">f′(x<sub>n</sub>)</span>
+        </span>,
+        &nbsp; n ≥ 0
+      </div>
+    </section>
+
+    <!-- Examples -->
+    <section class="card">
+      <h2>Examples (3 Iterations)</h2>
+
+      <div class="example-box">
+        <h3>Example 1</h3>
+        <p><b>Given:</b> f(x) = 4x − e^x, x₀ = 2.5</p>
+        <div id="ex1Table"></div>
+      </div>
+
+      <div class="example-box">
+        <h3>Example 2</h3>
+        <p><b>Given:</b> f(x) = 2x^3 − 3x − 6, x₀ = 1.5</p>
+        <div id="ex2Table"></div>
+      </div>
+    </section>
+
+    <!-- Try Your Own -->
+    <section class="card">
+      <h2>Try Your Own</h2>
+      <p><b>Enter Function f(x):</b></p>
+      <input type="text" id="ufunc" placeholder="e.g. e^x - 4*x">
+
+      <label>Initial Guess x₀:</label>
+      <input type="number" id="ux0" step="any">
+
+      <label>Number of Iterations:</label>
+      <input type="number" id="uiter" min="1" placeholder="Enter iterations">
+
+      <button onclick="solveUser()">Solve</button>
+
+      <div id="userTable"></div>
+    </section>
+
+    <!-- Fun Fact -->
+    <section class="card">
+      <h2>Fun Fact</h2>
+      <p>
+        Newton–Raphson converges very quickly when the starting guess is close
+        to the true root. Often the number of correct digits roughly doubles
+        with each iteration.
+      </p>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
